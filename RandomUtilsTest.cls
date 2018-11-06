@@ -1,4 +1,5 @@
-global class RandomUtilsTest {
+@isTest
+private class RandomUtilsTest {
 
     private static testmethod void testNextBoolean(){
     	System.assertNotEquals(null,RandomUtils.nextBoolean());

@@ -1366,8 +1366,8 @@ private class ApexLangUtilsTest {
         assertToStringBlobSet(new Set<Blob>{}, '');
         Blob blob1 = generateRandomBlob();
         Blob blob2 = generateRandomBlob();
-        assertToStringBlobSet(new Set<Blob>{blob1}, '{\'' + blob1.toString() + '\'}');
-        assertToStringBlobSet(new Set<Blob>{blob1,blob2}, '{\'' + blob1.toString() + '\',\'' + blob2.toString() + '\'}');
+        assertToStringBlobSet(new Set<Blob>{blob1}, '{\'' + EncodingUtil.base64Encode(blob1) + '\'}');
+        assertToStringBlobSet(new Set<Blob>{blob1,blob2}, '{\'' + EncodingUtil.base64Encode(blob1) + '\',\'' + EncodingUtil.base64Encode(blob2) + '\'}');
     }    
 
     private static testmethod void testToStringBooleanSet(){ 
@@ -2967,8 +2967,8 @@ private class ApexLangUtilsTest {
         assertJoinSetBlobSet(new Set<Blob>{}, '|', '');
         Blob blob1 = generateRandomBlob();
         Blob blob2 = generateRandomBlob();
-        assertJoinSetBlobSet(new Set<Blob>{blob1}, '|', '\'' + blob1.toString() + '\'');
-        assertJoinSetBlobSet(new Set<Blob>{blob1,blob2}, '|', '\'' + blob1.toString() + '\'|\'' + blob2.toString() + '\'');
+        assertJoinSetBlobSet(new Set<Blob>{blob1}, '|', '\'' + EncodingUtil.base64Encode(blob1) + '\'');
+        assertJoinSetBlobSet(new Set<Blob>{blob1,blob2}, '|', '\'' + EncodingUtil.base64Encode(blob1) + '\'|\'' + EncodingUtil.base64Encode(blob2) + '\'');
     }    
 
     private static testmethod void testJoinSetBooleanSet(){ 

@@ -1067,7 +1067,7 @@ global class ApexLangUtils {
                     returnString += separator;
                 }
             }
-            if(anObject instanceof Blob){ returnString += '' + ((Blob)anObject).toString() + '';
+            if(anObject instanceof Blob){ returnString += '' + EncodingUtil.base64Encode((Blob)anObject) + '';
             } else if(anObject instanceof Boolean){ returnString += ((Boolean)anObject);
             } else if(anObject instanceof Date){ returnString += '' + ((Date)anObject) + '';
             } else if(anObject instanceof Datetime){ returnString += '' + ((Datetime)anObject) + '';
@@ -2955,7 +2955,7 @@ global class ApexLangUtils {
             } else {
                 returnValue += ',';
             }
-            if(anObject instanceof Blob){ returnValue += '\'' + ((Blob)anObject).toString() + '\'';
+            if(anObject instanceof Blob){ returnValue += '\'' + EncodingUtil.base64Encode((Blob)anObject) + '\'';
             } else if(anObject instanceof Boolean){ returnValue += ((Boolean)anObject);
             } else if(anObject instanceof Date){ returnValue += '\'' + ((Date)anObject) + '\'';
             } else if(anObject instanceof Datetime){ returnValue += '\'' + ((Datetime)anObject) + '\'';

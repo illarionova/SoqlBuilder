@@ -57,7 +57,7 @@ private class SoqlUtilsTest {
     }
 
     private static testmethod void testDatetimeValue(){
-        System.assertEquals('2008-12-01T12:00:00Z',SoqlUtils.toLiteral(Datetime.newInstance(2008, 12, 1)));   
+        System.assertEquals('2008-12-01T00:00:00Z',SoqlUtils.toLiteral(Datetime.newInstance(2008, 12, 1)));   
     }
     
     private static testmethod void testPrimitivesToSoqlLiterals(){
